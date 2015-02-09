@@ -1,6 +1,7 @@
 package th.ac.tu.siit.its333.lab4exercise1;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,8 @@ public class AddCourseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course);
+
+
     }
 
     public void addClicked(View v) {
@@ -44,6 +47,18 @@ public class AddCourseActivity extends ActionBarActivity {
             this.setResult(RESULT_OK, result);
             this.finish();
         }
+
+        int id = v.getId();
+            switch (id)
+            {
+                case R.id.button3:
+                    Toast t = Toast.makeText(this.getApplicationContext(),
+                                            "Course Added",Toast.LENGTH_SHORT);
+                    t.show();
+
+                    break;
+            }
+
     }
 
 
